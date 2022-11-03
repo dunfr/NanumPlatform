@@ -9,18 +9,19 @@ public class ObjectRotation1 : MonoBehaviour
     private float rotatePoint;
     void Update()
     {
-         if (Input.GetKeyDown(KeyCode.Space))
-         {
-            StartCoroutine(IERotation());                        
-         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(IeRotation());
+        }
     }
-    IEnumerator IERotation()
+
+    IEnumerator IeRotation()
     {
-        for (int i = 0; i < 60; i++)
+        for (int i = 0; i < 180; i++)
         {
             transform.Rotate(0, 0, rotatePoint);
             i++;
-            yield return new WaitForSeconds(0.015f);
+            yield return null;
         }
     }
 }

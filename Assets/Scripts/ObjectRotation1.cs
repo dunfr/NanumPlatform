@@ -5,55 +5,30 @@ using System;
 
 public class ObjectRotation1 : MonoBehaviour
 {
-    [SerializeField]
     private float rotatePoint;
-    public Quaternion currentAngle;
+    private Quaternion currentAngle;
     void Start()
     {
         currentAngle = transform.rotation;
+        rotatePoint = 0;
     }
     void Update()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation,currentAngle, Time.deltaTime * 4);
+        transform.rotation = Quaternion.Slerp(transform.rotation,currentAngle, Time.deltaTime * 7);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (Singleton.Instance.isRight)
             {
                 rotatePoint -= 90;
-                currentAngle = Quaternion.Euler(0, 0, rotatePoint-5);
+                currentAngle = Quaternion.Euler(0, 0, rotatePoint);
                 Debug.Log(currentAngle.eulerAngles);
             }
             if (Singleton.Instance.isLeft)
             {
                 rotatePoint += 90;
-                currentAngle = Quaternion.Euler(0, 0, rotatePoint-5);
+                currentAngle = Quaternion.Euler(0, 0, rotatePoint);
                 Debug.Log(currentAngle.eulerAngles);
             }
-        }
-    }
-    void turnRight()
-    {
-
-    }
-    void turnLeft()
-    {
-
-    }
-
-    IEnumerator IeRotation()
-    {/*
-        for (int i = 0; i < 180; i++)
-        {
-            transform.Rotate(0, 0, rotatePoint);
-            i++;
-            yield return null;
-        }
-        */
-        while (true)
-        {
-            Quaternion firstRotation = transform.rotation;
-            transform.rotation = Quaternion.Lerp(transform.rotation,firstRotation,Time.deltaTime);
-            yield return null;
         }
     }
 }

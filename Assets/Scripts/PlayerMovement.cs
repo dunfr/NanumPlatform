@@ -10,8 +10,10 @@ public class PlayerMovement : MonoBehaviour
     private float jumpPower;
     private Rigidbody2D playerRigidbody2D;
     private bool isground;
+    public float rotatePoint;
     public Transform groundCheck;
     public LayerMask groundLayer;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         jump();
+        rotate();
     }
     void move()
     {
@@ -39,6 +42,22 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) && isground)
         {
             playerRigidbody2D.velocity = new Vector2(playerRigidbody2D.velocity.x, jumpPower);
+        }
+    }
+    void rotate()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Singleton.Instance.isRight)
+            {
+                rotatePoint = +90;
+                transform.Rotate(0, 0, rotatePoint);
+            }
+            if (Singleton.Instance.isLeft)
+            {
+                rotatePoint = -90;
+                transform.Rotate(0, 0, rotatePoint);
+            }
         }
     }
 }

@@ -46,17 +46,17 @@ public class PlayerMovement : MonoBehaviour
     }
     void rotate()
     {
-        if (Singleton.Instance.isRight && Singleton.Instance.CircleRotate)
+        if (Singleton.Instance.isRight && Singleton.Instance.circleRotate)
         {
             rotatePoint = +90;
             transform.Rotate(0, 0, rotatePoint);
-            Singleton.Instance.CircleRotate = false;
+            Singleton.Instance.circleRotate = false;
         }
-        if (Singleton.Instance.isLeft && Singleton.Instance.CircleRotate)
+        if (Singleton.Instance.isLeft && Singleton.Instance.circleRotate)
         {
             rotatePoint = -90;
             transform.Rotate(0, 0, rotatePoint);
-            Singleton.Instance.CircleRotate = false;
+            Singleton.Instance.circleRotate = false;
         }
     }
 }

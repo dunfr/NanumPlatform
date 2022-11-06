@@ -7,9 +7,8 @@ public class Singleton : MonoBehaviour
     private static Singleton instance = null;
     public bool isRight;
     public bool isLeft;
-    public bool isRightRotate;
-    public bool isLeftRotate;
-    public bool CircleRotate;
+    public bool isRotate;
+    public bool circleRotate;
     void Awake()
     {
         if (null == instance)

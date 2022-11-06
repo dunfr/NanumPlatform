@@ -9,8 +9,7 @@ public class Boxcoliders : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Singleton.Instance.isRightRotate = true;
-        Singleton.Instance.isLeftRotate = true;
+        Singleton.Instance.isRotate = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +21,7 @@ public class Boxcoliders : MonoBehaviour
             }
             if (direction == type.Left)
             {
-                Singleton.Instance.isLeft = true;                                                               
+                Singleton.Instance.isLeft = true;
             }
         }
     }
@@ -33,12 +32,13 @@ public class Boxcoliders : MonoBehaviour
             if (direction == type.Right)
             {
                 Singleton.Instance.isRight = false;
-                Singleton.Instance.isRightRotate = true;
+                Singleton.Instance.isRotate = true;
+
             }
             if (direction == type.Left)
             {
                 Singleton.Instance.isLeft = false;
-                Singleton.Instance.isLeftRotate = true;
+                Singleton.Instance.isRotate = true;
             }
         }
     }

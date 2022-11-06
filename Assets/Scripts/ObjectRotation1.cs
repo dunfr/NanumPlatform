@@ -14,21 +14,23 @@ public class ObjectRotation1 : MonoBehaviour
     }
     void Update()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation,currentAngle, Time.deltaTime * 7);
-        if (Input.GetKeyDown(KeyCode.Space))
+        transform.rotation = Quaternion.Slerp(transform.rotation, currentAngle, Time.deltaTime * 7);
+        if (Singleton.Instance.isRight && Singleton.Instance.isRightRotate)
         {
-            if (Singleton.Instance.isRight)
-            {
-                rotatePoint -= 90;
-                currentAngle = Quaternion.Euler(0, 0, rotatePoint);
-                Debug.Log(currentAngle.eulerAngles);
-            }
-            if (Singleton.Instance.isLeft)
-            {
-                rotatePoint += 90;
-                currentAngle = Quaternion.Euler(0, 0, rotatePoint);
-                Debug.Log(currentAngle.eulerAngles);
-            }
+            rotatePoint -= 90;
+            currentAngle = Quaternion.Euler(0, 0, rotatePoint);
+            Singleton.Instance.isRightRotate = false;
+            Singleton.Instance.CircleRotate = true;
+            Debug.Log(currentAngle.eulerAngles);
+        }
+        if (Singleton.Instance.isLeft && Singleton.Instance.isLeftRotate)
+        {
+            rotatePoint += 90;
+            currentAngle = Quaternion.Euler(0, 0, rotatePoint);
+            Singleton.Instance.isLeftRotate = false;
+            Singleton.Instance.CircleRotate = true;
+            Debug.Log(currentAngle.eulerAngles);
         }
     }
+
 }

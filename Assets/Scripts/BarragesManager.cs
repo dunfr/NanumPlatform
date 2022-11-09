@@ -30,7 +30,7 @@ public class BarragesManager : MonoBehaviour
             }
             if (Vector == vectortype.My)
             {
-                position.y += -10 * Time.deltaTime;
+                position.y += - 10 * Time.deltaTime;
             }
             transform.localPosition = position;
             Invoke("Destroy", 6f);

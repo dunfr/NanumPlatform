@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 3906527515745487878}
   - component: {fileID: 3906527515745487877}
   - component: {fileID: 3906527515745487876}
+  - component: {fileID: -9017199056681347448}
   m_Layer: 0
   m_Name: LaserBackground
   m_TagString: Untagged
@@ -190,3 +191,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-9017199056681347448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906527515745487879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e526ced50d0ef4a4c8531d363ca4079c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barragesType: 0

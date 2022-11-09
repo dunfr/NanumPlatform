@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6618981167462712098}
   - component: {fileID: 6618981167462712101}
   - component: {fileID: 6618981167462712100}
+  - component: {fileID: 2754550426087934866}
   m_Layer: 0
   m_Name: CircleBackgraound
   m_TagString: Untagged
@@ -106,6 +107,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2754550426087934866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618981167462712099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e526ced50d0ef4a4c8531d363ca4079c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barragesType: 1
 --- !u!1 &6618981168570335350
 GameObject:
   m_ObjectHideFlags: 0

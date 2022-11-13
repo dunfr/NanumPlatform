@@ -20,6 +20,7 @@ public class Singleton : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        DontDestroyOnLoad(this.gameObject);
     }
     public static Singleton Instance
     {

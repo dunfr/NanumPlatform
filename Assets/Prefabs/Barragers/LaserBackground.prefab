@@ -204,3 +204,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barragesType: 0
+  Vector: 0

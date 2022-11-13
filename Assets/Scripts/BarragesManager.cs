@@ -33,7 +33,7 @@ public class BarragesManager : MonoBehaviour
                 position.y += - 10 * Time.deltaTime;
             }
             transform.localPosition = position;
-            Invoke("Destroy", 6f);
+            Invoke("Destroy", 4f);
         }
         if (barragesType == type.Circle)
         {
@@ -46,6 +46,13 @@ public class BarragesManager : MonoBehaviour
     }
     void Destroy()
     {
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("die");
+        }
     }
 }

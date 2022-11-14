@@ -23,12 +23,12 @@ public class BarragesSpawner : MonoBehaviour
         {
             buts[CurrentButPressed].clicked = false;
             var note = _Pool.Get();
-            //Instantiate(NotePrefabs[CurrentButPressed], new Vector3(worldPostion.x, worldPostion.y, 0), Quaternion.identity);
+            note.Release();
         }
     }
     private BarragesManager CreateNote()
     {
-        BarragesManager Note = Instantiate(NotePrefabs[CurrentButPressed]).GetComponent<BarragesManager>();
+        BarragesManager Note = Instantiate(NotePrefabs[CurrentButPressed], new Vector3(worldPostion.x, worldPostion.y, 0), Quaternion.identity).GetComponent<BarragesManager>();
         Note.SetManagedPool(_Pool);
         return Note;
     }

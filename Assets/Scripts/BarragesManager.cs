@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class BarragesManager : MonoBehaviour
 {
@@ -8,7 +9,13 @@ public class BarragesManager : MonoBehaviour
     public type barragesType;
     public enum vectortype { X, Mx, Y, My }
     public vectortype Vector;
+    private IObjectPool<BarragesManager> _ManagedPool;
 
+
+    void Start()
+    {
+        Invoke("Destroy", 3f);
+    }
     // Start is called before the first frame update
     // Update is called once per frame
     void Update()
@@ -33,20 +40,15 @@ public class BarragesManager : MonoBehaviour
                 position.y += - 10 * Time.deltaTime;
             }
             transform.localPosition = position;
-            Invoke("Destroy", 4f);
         }
-        if (barragesType == type.Circle)
-        {
-            Invoke("Destroy", 3f);
-        }
-        if (barragesType == type.Laser)
-        {
-            Invoke("Destroy", 3f);
-        }
+    }
+    public void SetManagedPool(IObjectPool<BarragesManager> pool)
+    {
+        _ManagedPool = pool;
     }
     void Destroy()
     {
-        //Destroy(this.gameObject);
+        _ManagedPool.Release(this);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

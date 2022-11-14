@@ -14,11 +14,52 @@ public class MusicPlayer : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        Singleton.Instance.musicTime = audioSource.clip.length;
+        StopAudio();
     }
-
     // Update is called once per frame
     void Update()
     {
-        
+        if (!stop)
+        {
+            musicLength.value = audioSource.time;
+            Singleton.Instance.musicTime -= Time.deltaTime;
+        }
+        Debug.Log(Singleton.Instance.musicTime);
+    }
+    public void StartAudio()
+    {
+        if (stop)
+        {
+            stop = false;
+        }
+        else if (!stop)
+        {
+            Singleton.Instance.musicTime = audioSource.clip.length;
+        }
+        musicLength.maxValue = audioSource.clip.length;
+        musicLength.value = 0;
+        audioSource.Play();        
+    }
+    public void StopAudio()
+    {
+        audioSource.Pause();
+        stop = true;
+    }
+    public void go()
+    {
+        if (!stop)
+        {
+            audioSource.time += 2f;
+            Singleton.Instance.musicTime -= 2f;
+        }
+    }
+    public void back()
+    {
+        if (!stop)
+        {
+            audioSource.time -= 2f;
+            Singleton.Instance.musicTime += 2f;
+        }
     }
 }

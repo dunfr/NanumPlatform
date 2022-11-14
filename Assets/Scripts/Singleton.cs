@@ -9,6 +9,7 @@ public class Singleton : MonoBehaviour
     public bool isLeft;
     public bool isRotate;
     public bool circleRotate;
+    public float musicTime;
     void Awake()
     {
         if (null == instance)

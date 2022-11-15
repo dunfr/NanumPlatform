@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MusicPlayer : MonoBehaviour
 {
-    private int musicAtual = 0;
     private AudioSource audioSource;
     public AudioClip[] clipNames;
     public Slider musicLength;
@@ -14,7 +13,6 @@ public class MusicPlayer : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        Singleton.Instance.musicTime = audioSource.clip.length;
         StopAudio();
     }
     // Update is called once per frame
@@ -23,19 +21,15 @@ public class MusicPlayer : MonoBehaviour
         if (!stop)
         {
             musicLength.value = audioSource.time;
-            Singleton.Instance.musicTime -= Time.deltaTime;
+            Singleton.Instance.musicTime = audioSource.time;
         }
-        Debug.Log(Singleton.Instance.musicTime);
+        //Debug.Log(Singleton.Instance.musicTime);
     }
     public void StartAudio()
     {
         if (stop)
         {
             stop = false;
-        }
-        else if (!stop)
-        {
-            Singleton.Instance.musicTime = audioSource.clip.length;
         }
         musicLength.maxValue = audioSource.clip.length;
         musicLength.value = 0;
@@ -51,7 +45,6 @@ public class MusicPlayer : MonoBehaviour
         if (!stop)
         {
             audioSource.time += 2f;
-            Singleton.Instance.musicTime -= 2f;
         }
     }
     public void back()
@@ -59,11 +52,9 @@ public class MusicPlayer : MonoBehaviour
         if (!stop)
         {
             audioSource.time -= 2f;
-            Singleton.Instance.musicTime += 2f;
             if (audioSource.time<112.216f)
             {
                 audioSource.Play();
-                Singleton.Instance.musicTime = audioSource.clip.length;
             }
         }
     }

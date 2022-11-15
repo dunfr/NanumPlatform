@@ -620,6 +620,7 @@ MonoBehaviour:
   isLeft: 0
   isRotate: 0
   circleRotate: 0
+  musicTime: 0
 --- !u!4 &298619353
 Transform:
   m_ObjectHideFlags: 0
@@ -779,7 +780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 364144241}
   m_Layer: 0
-  m_Name: nots
+  m_Name: Notes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

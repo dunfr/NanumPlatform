@@ -9,6 +9,7 @@ public class BarragesManager : MonoBehaviour
     public type barragesType;
     public enum vectortype { X, Mx, Y, My }
     public vectortype Vector;
+    public float cooolTime;
     private IObjectPool<BarragesManager> _ManagedPool;
     // Start is called before the first frame update
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class BarragesManager : MonoBehaviour
     }
     public void Release()
     {
-        Invoke("Destroy", 3f);
+        Invoke("Destroy", cooolTime);
     }
     void Destroy()
     {

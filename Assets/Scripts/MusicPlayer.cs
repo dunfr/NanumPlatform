@@ -60,6 +60,11 @@ public class MusicPlayer : MonoBehaviour
         {
             audioSource.time -= 2f;
             Singleton.Instance.musicTime += 2f;
+            if (audioSource.time<112.216f)
+            {
+                audioSource.Play();
+                Singleton.Instance.musicTime = audioSource.clip.length;
+            }
         }
     }
 }

@@ -559,9 +559,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 364144243}
+      - m_Target: {fileID: 364144240}
         m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
-        m_MethodName: go
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -756,7 +756,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 364144243}
         m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
-        m_MethodName: StopAudio
+        m_MethodName: pause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -862,7 +862,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 89b280dcabd754647a1ae53ae7368071, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -2929,7 +2929,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 364144243}
         m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
-        m_MethodName: StartAudio
+        m_MethodName: start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

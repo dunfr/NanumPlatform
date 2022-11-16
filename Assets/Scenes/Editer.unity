@@ -897,6 +897,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 7971228641577925268, guid: 89b280dcabd754647a1ae53ae7368071, type: 2}
     value: {fileID: 80073206}
+  - key: {fileID: 3558052020209804665, guid: 89b280dcabd754647a1ae53ae7368071, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 355b5f956f9ee4c4eabb8ddaaf3b3e87: {fileID: 80073206}
@@ -3906,7 +3908,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1585955022}
         m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
-        m_MethodName: saveData
+        m_MethodName: LoadData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

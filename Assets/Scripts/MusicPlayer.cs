@@ -33,11 +33,13 @@ public class MusicPlayer : MonoBehaviour
         }
         musicLength.maxValue = audioSource.clip.length;
         musicLength.value = 0;
-        audioSource.Play();        
+        audioSource.Play();
+        Time.timeScale = 1;
     }
     public void StopAudio()
     {
         audioSource.Pause();
+        Time.timeScale = 0;
         stop = true;
     }
     public void go()

@@ -7,14 +7,16 @@ using UnityEngine.Timeline;
 public class BarragesSpawner : MonoBehaviour
 {
     public BarragesUI[] buts;
-    public GameObject[] NotePrefabs;
+    public GameObject[] notePrefabs;
     public int CurrentButPressed;
+    public Transform noteParent;
     private Vector2 screenPosition;
     private Vector2 worldPostion;
-    private IObjectPool<BarragesManager> _Pool;
+    private TimelineManager timelineManager;
+    private BarragesManager barragesManager;
     void Awake()
     {
-        _Pool = new ObjectPool<BarragesManager>(CreateNote, OngetNote, OnReleaseNote, OnDestroyNote, maxSize: 20);
+        timelineManager = GameObject.FindGameObjectWithTag("NoteManager").GetComponent<TimelineManager>();
     }
     void Update()
     {
@@ -23,26 +25,9 @@ public class BarragesSpawner : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && buts[CurrentButPressed].clicked)     
         {
             buts[CurrentButPressed].clicked = false;
-            var note = _Pool.Get();
-            note.Release();
+            timelineManager.note = Instantiate(notePrefabs[CurrentButPressed], new Vector3(worldPostion.x, worldPostion.y, 0), Quaternion.identity);
+            timelineManager.Create(Singleton.Instance.musicTime);
+            timelineManager.note.transform.parent = noteParent;
         }
-    }
-    private BarragesManager CreateNote()
-    {
-        BarragesManager Note = Instantiate(NotePrefabs[CurrentButPressed], new Vector3(worldPostion.x, worldPostion.y, 0), Quaternion.identity).GetComponent<BarragesManager>();
-        Note.SetManagedPool(_Pool);
-        return Note;
-    }
-    private void OngetNote(BarragesManager barragesManager)
-    {
-        barragesManager.gameObject.SetActive(true);
-    }
-    private void OnReleaseNote(BarragesManager barragesManager)
-    {
-        barragesManager.gameObject.SetActive(false);
-    }
-    private void OnDestroyNote(BarragesManager barragesManager)
-    {
-        Destroy(barragesManager.gameObject);
     }
 }

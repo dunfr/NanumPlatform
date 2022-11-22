@@ -10,7 +10,7 @@ public class BarragesManager : MonoBehaviour
     public enum vectortype { X, Mx, Y, My }
     public vectortype Vector;
     public float cooolTime;
-    private IObjectPool<BarragesManager> _ManagedPool;
+    //private IObjectPool<BarragesManager> _ManagedPool;
     // Start is called before the first frame update
     // Update is called once per frame
     void Update()
@@ -20,7 +20,7 @@ public class BarragesManager : MonoBehaviour
             Vector2 position = transform.localPosition;
             if (Vector == vectortype.X)
             { 
-                position.x += 10 * Time.deltaTime;
+                position.x += .5f * Time.deltaTime;
             }
             if (Vector == vectortype.Mx)
             {
@@ -37,17 +37,13 @@ public class BarragesManager : MonoBehaviour
             transform.localPosition = position;
         }
     }
-    public void SetManagedPool(IObjectPool<BarragesManager> pool)
-    {
-        _ManagedPool = pool;
-    }
     public void Release()
     {
         Invoke("Destroy", cooolTime);
     }
     void Destroy()
     {
-        _ManagedPool.Release(this);
+       this.gameObject.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

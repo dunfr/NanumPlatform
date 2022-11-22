@@ -272,16 +272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   clicked: 0
---- !u!1 &80073206 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6618981167462712099, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-  m_PrefabInstance: {fileID: 598020638}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &80073207 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-  m_PrefabInstance: {fileID: 598020638}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &132537777
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,18 +549,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 364144243}
-        m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
-        m_MethodName: go
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &203120384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,7 +734,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 364144243}
         m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
-        m_MethodName: StopAudio
+        m_MethodName: pause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -815,9 +793,10 @@ GameObject:
   - component: {fileID: 364144241}
   - component: {fileID: 364144243}
   - component: {fileID: 364144244}
+  - component: {fileID: 364144245}
   m_Layer: 0
   m_Name: Notes
-  m_TagString: Untagged
+  m_TagString: NoteManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -833,8 +812,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 80073207}
+  m_Children: []
   m_Father: {fileID: 132537779}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -851,7 +829,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timelineAsset: {fileID: 11400000, guid: 89b280dcabd754647a1ae53ae7368071, type: 2}
-  note: {fileID: 80073206}
+  note: {fileID: 6618981167462712099, guid: f76cd832b948d544cb067efd24c85973, type: 3}
+  animationClip: {fileID: 0}
 --- !u!320 &364144244
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -862,7 +841,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 89b280dcabd754647a1ae53ae7368071, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -896,11 +875,81 @@ PlayableDirector:
   - key: {fileID: 7596890202380049410, guid: 89b280dcabd754647a1ae53ae7368071, type: 2}
     value: {fileID: 0}
   - key: {fileID: 7971228641577925268, guid: 89b280dcabd754647a1ae53ae7368071, type: 2}
-    value: {fileID: 80073206}
+    value: {fileID: 0}
+  - key: {fileID: 5242521676607159400, guid: 89b280dcabd754647a1ae53ae7368071, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
-    - 355b5f956f9ee4c4eabb8ddaaf3b3e87: {fileID: 80073206}
-    - 700c686a98672eb4ca9412e6c4199718: {fileID: 80073206}
+    - 355b5f956f9ee4c4eabb8ddaaf3b3e87: {fileID: 0}
+    - 700c686a98672eb4ca9412e6c4199718: {fileID: 0}
+--- !u!95 &364144245
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364144240}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &389048915
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +1034,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 389048918}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 389048920}
+        m_TargetAssemblyTypeName: BarragesUI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &389048918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,18 +1195,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 364144243}
-        m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
-        m_MethodName: back
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &409660298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,9 +1279,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buts:
   - {fileID: 48736582}
-  NotePrefabs:
-  - {fileID: 3338938367983436780, guid: 28acb2631a80c0d4db2167bf4ec7750a, type: 3}
+  notePrefabs:
+  - {fileID: 6618981167462712099, guid: f76cd832b948d544cb067efd24c85973, type: 3}
   CurrentButPressed: 0
+  noteParent: {fileID: 364144241}
 --- !u!1 &449999535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,67 +1541,6 @@ RectTransform:
   m_AnchoredPosition: {x: -4.9999695, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &598020638
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 364144241}
-    m_Modifications:
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.4622
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.3733
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712098, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712099, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_Name
-      value: CircleBackgraound
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618981167462712099, guid: f76cd832b948d544cb067efd24c85973, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f76cd832b948d544cb067efd24c85973, type: 3}
 --- !u!1 &611865465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,7 +2918,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 364144243}
         m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
-        m_MethodName: StartAudio
+        m_MethodName: start
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

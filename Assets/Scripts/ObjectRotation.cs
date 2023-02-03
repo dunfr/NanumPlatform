@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ObjectRotation1 : MonoBehaviour
+public class ObjectRotation : MonoBehaviour
 {
     private float rotatePoint;
     private Quaternion currentAngle;
@@ -15,21 +15,21 @@ public class ObjectRotation1 : MonoBehaviour
     void Update()
     {
          transform.rotation = Quaternion.Slerp(transform.rotation, currentAngle, Time.deltaTime * 5);
-        if (Singleton.Instance.isRight && Singleton.Instance.isRotate )
+        if (GameManager.Instance.isRight && GameManager.Instance.isRotate )
         {
             rotatePoint -= 90;
             currentAngle = Quaternion.Euler(0, 0, rotatePoint);
-            Singleton.Instance.circleRotate = true;
-            
-            Singleton.Instance.isRotate = false;
+            GameManager.Instance.circleRotate = true;
+
+            GameManager.Instance.isRotate = false;
             Debug.Log(currentAngle.eulerAngles);
         }
-        if (Singleton.Instance.isLeft && Singleton.Instance.isRotate )
+        if (GameManager.Instance.isLeft && GameManager.Instance.isRotate )
         {
             rotatePoint += 90;
             currentAngle = Quaternion.Euler(0, 0, rotatePoint);
-            Singleton.Instance.isRotate = false;
-            Singleton.Instance.circleRotate = true;
+            GameManager.Instance.isRotate = false;
+            GameManager.Instance.circleRotate = true;
             Debug.Log(currentAngle.eulerAngles);
         }
     }

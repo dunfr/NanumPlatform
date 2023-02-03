@@ -20,7 +20,7 @@ public class BarragesManager : MonoBehaviour
             Vector2 position = transform.localPosition;
             if (Vector == vectortype.X)
             { 
-                position.x += .5f * Time.deltaTime;
+                position.x += 5f * Time.deltaTime;
             }
             if (Vector == vectortype.Mx)
             {

@@ -21,7 +21,7 @@ public class MusicPlayer : MonoBehaviour
         if (!stop)
         {
             musicLength.value = audioSource.time;
-            Singleton.Instance.musicTime = audioSource.time;
+            GameManager.Instance.musicTime = audioSource.time;
         }
         //Debug.Log(Singleton.Instance.musicTime);
     }
@@ -53,7 +53,14 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!stop)
         {
-            audioSource.time -= 2f;
+            if (audioSource.time < 2)
+            {
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.time -= 2f;
+            }
             if (audioSource.time<112.216f)
             {
                 audioSource.Play();

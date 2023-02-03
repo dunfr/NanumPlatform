@@ -22,7 +22,7 @@ public class TimelineManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playableDirector.time = Singleton.Instance.musicTime;
+        playableDirector.time = GameManager.Instance.musicTime;
     }
     public void Create(float starttime)
     {

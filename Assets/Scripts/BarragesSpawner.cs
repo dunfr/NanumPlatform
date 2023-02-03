@@ -26,7 +26,7 @@ public class BarragesSpawner : MonoBehaviour
         {
             buts[CurrentButPressed].clicked = false;
             timelineManager.note = Instantiate(notePrefabs[CurrentButPressed], new Vector3(worldPostion.x, worldPostion.y, 0), Quaternion.identity);
-            timelineManager.Create(Singleton.Instance.musicTime);
+            timelineManager.Create(GameManager.Instance.musicTime);
             timelineManager.note.transform.parent = noteParent;
         }
     }

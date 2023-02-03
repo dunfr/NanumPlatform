@@ -9,7 +9,7 @@ public class Boxcoliders : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Singleton.Instance.isRotate = true;
+        GameManager.Instance.isRotate = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,11 +17,11 @@ public class Boxcoliders : MonoBehaviour
         {
             if (direction == type.Right)
             {
-                Singleton.Instance.isRight = true;
+                GameManager.Instance.isRight = true;
             }
             if (direction == type.Left)
             {
-                Singleton.Instance.isLeft = true;
+                GameManager.Instance.isLeft = true;
             }
         }
     }
@@ -31,14 +31,14 @@ public class Boxcoliders : MonoBehaviour
         {
             if (direction == type.Right)
             {
-                Singleton.Instance.isRight = false;
-                Singleton.Instance.isRotate = true;
+                GameManager.Instance.isRight = false;
+                GameManager.Instance.isRotate = true;
 
             }
             if (direction == type.Left)
             {
-                Singleton.Instance.isLeft = false;
-                Singleton.Instance.isRotate = true;
+                GameManager.Instance.isLeft = false;
+                GameManager.Instance.isRotate = true;
             }
         }
     }
